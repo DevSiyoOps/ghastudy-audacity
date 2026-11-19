@@ -6,15 +6,17 @@ on:
 
 jobs:
   au4_codestyle:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
     - name: Clone repository
-      uses: actions/checkout@v7
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         submodules: true
+        persist-credentials: false
 
     - name: Install Qt
-      uses: jurplel/install-qt-action@v4
+      uses: jurplel/install-qt-action@b344308e4483fc892e0d27b3cd1b173ebdd95f06 # v4.5.0
       with:
         version: '6.11.2'
         host: 'linux'
